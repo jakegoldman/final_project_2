@@ -15,17 +15,28 @@ class Network {
   
   void repelForce() {
     //each node calls Node.repel() on every other node
-    //Fr = Kr/d^2
   }
   
   void springForce() {
     //for every node:
     //spring force between neighbors
-    //Fs = Ks(d - L);
-    
-    
   }
   
+  void update() {
+    //update positions
+    //using repelForce() and
+    //springForce()
+  }
+  
+  void highlightNode() {
+    //mousePressed
+    //compares xSorted to mouseX and ySorted to mouseY
+    //uses binary search
+  }
+  
+  void highlightHub() {
+    //highlights nodes with most connections
+  }
   
   
   

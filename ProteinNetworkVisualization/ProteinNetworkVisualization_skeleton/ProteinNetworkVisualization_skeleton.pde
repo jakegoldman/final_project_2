@@ -9,6 +9,15 @@ void setup() {
 }
 
 
-void force() {
-  //call repel on each node
+void draw() {
+  
+  network.update();
+  
+}
+
+
+
+void zoom(int x, int y) {
+  //zooms on point (x,y)
+  
 }
