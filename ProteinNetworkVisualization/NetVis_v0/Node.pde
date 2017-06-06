@@ -28,16 +28,16 @@ class Node {
     //Fr = Kr/d^2
   }
   
+  
+  
+  
+  
+  
 
   float getDist(Node other) {
     return pos.dist( other.pos );
   }
-  
-  
-  
-  
-  
-  
+ 
   int getDegree() {
     //return numConnections
     return 0;
