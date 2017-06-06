@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Network{
   
   Node[] nodes;
@@ -8,6 +10,15 @@ class Network{
  
   
   Network(String filename){
+    Scanner sc;
+    try {
+      sc = new Scanner(new File(filename));
+    }
+    catch (FileNotFoundException e) {
+      System.out.println("Error 404: File not found");
+      System.exit(0);
+    }
+      
     // load file, initialize the stuff
   }
   

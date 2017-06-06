@@ -12,6 +12,9 @@ class Edge{
     calcSpringForce();
   }
   
+  void display() {
+  }
+  
   
   void calcSpringForce(){
     float x = Ks * ( (n1.pos.x - n2.pos.x) - restLength );
