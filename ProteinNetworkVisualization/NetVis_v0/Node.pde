@@ -20,7 +20,17 @@ class Node {
   }
   
   
-  PVector repel(Node other) {
+  void display() {
+    fill(128,0,128);//color purple
+    ellipse(pos.x, pos.y, 10, 10); //10 is the size
+  }
+  
+  void update() {
+    pos = pos.add(repForce);
+    pos = pos.add(springForce);
+  }
+  
+  PVector repel(Node other) {//calculates repel force
     PVector ans = new PVector(0,0);
     ans.x = Kr / ( ( pos.x - other.pos.x ) * ( pos.x - other.pos.x ) );
     ans.y = Kr / ( ( pos.y - other.pos.y ) * ( pos.y - other.pos.y ) );
@@ -29,11 +39,6 @@ class Node {
   }
   
   
-  
-  
-  
-  
-
   float getDist(Node other) {
     return pos.dist( other.pos );
   }

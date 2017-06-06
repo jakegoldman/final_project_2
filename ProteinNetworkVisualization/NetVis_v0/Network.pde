@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 class Network{
   
@@ -23,7 +24,8 @@ class Network{
   }
   
   
-  void setRepForce(){
+  
+  void setRepForce(){ //check if for-each works in this case?
     for( Node applyTo : nodes ){
     PVector repForce = new PVector(0,0);
     for( Node toApply : nodes ){
@@ -39,6 +41,7 @@ class Network{
   void setSpringForce(){
     for( Edge e : edges ){
     e.calcSpringForce();
+    }
   }
   
   
@@ -49,9 +52,9 @@ class Network{
       n.update();
     }
   
-    for( Edge e : edges ){
-      e.update();
-    }
+    //for( Edge e : edges ){
+      //e.update();
+    //}
   }
   
 }
