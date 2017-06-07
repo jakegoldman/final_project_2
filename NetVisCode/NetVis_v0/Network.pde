@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 
 class Network{
   
-  ArrayList<Node> nodes;
-  ArrayList<Edge> edges;
+  ArrayList<Node> nodes = new ArrayList<Node>();
+  ArrayList<Edge> edges = new ArrayList<Edge>();
   float Kr;
   float Ks;
   float restLength;
@@ -40,10 +40,16 @@ class Network{
         }
         edges.add( new Edge( p1, p2, Ks, restLength ) );
         
+      } else {
+        sc.next();
+        sc.next();
       }
+      
     }
        
-       
+     
+    
+    System.out.println(edges);
   }
   
   
@@ -73,11 +79,12 @@ class Network{
     setSpringForce();
     for( Node n : nodes ){
       n.update();
+      n.display();
     }
   
-    //for( Edge e : edges ){
-      //e.update();
-    //}
+    for( Edge e : edges ){
+      e.display();
+    }
   }
   
 }

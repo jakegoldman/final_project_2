@@ -29,5 +29,8 @@ class Edge{
   }
   
   
+  String toString(){
+    return "" + n1 + n2;
+  }
   
 }

@@ -39,6 +39,11 @@ class Node {
   }
   
   
+  
+  String toString(){
+    return protein;
+  }
+  
   float getDist(Node other) {
     return pos.dist( other.pos );
   }
