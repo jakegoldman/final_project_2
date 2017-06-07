@@ -13,7 +13,7 @@ class Network{
  
   
   Network(String filename, String cluster){
-    Scanner sc;
+    Scanner sc = new Scanner("");
     try {
       sc = new Scanner(new File(filename));
     }
