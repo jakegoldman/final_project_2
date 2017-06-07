@@ -50,9 +50,9 @@ class Network{
   
   void setRepForce(){ //check if for-each works in this case?
     for( Node applyTo : nodes ){
-    PVector repForce = new PVector(0,0);
-    for( Node toApply : nodes ){
-      if( toApply != applyTo ){ // make sure not to apply a rep force to itself
+      PVector repForce = new PVector(0,0);
+      for( Node toApply : nodes ){
+        if( toApply != applyTo ){ // make sure not to apply a rep force to itself
           repForce.add( toApply.repel(applyTo) );
         }
       }
@@ -63,7 +63,7 @@ class Network{
   
   void setSpringForce(){
     for( Edge e : edges ){
-    e.calcSpringForce();
+      e.calcSpringForce();
     }
   }
   
