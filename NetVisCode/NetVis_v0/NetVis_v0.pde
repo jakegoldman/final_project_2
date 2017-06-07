@@ -3,13 +3,9 @@ Network network;
 void setup() {
   size(1200, 700);
   background(0);
-  network = new Network("cluster.csv");
+  network = new Network("cluster.csv", "1");
   
   
-  
-  // load the file
-  // initialize nodes
-  // initialize edges
   
 }
 

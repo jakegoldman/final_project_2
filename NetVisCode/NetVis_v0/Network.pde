@@ -10,7 +10,7 @@ class Network{
   float restLength;
  
   
-  Network(String filename){
+  Network(String filename, String cluster){
     Scanner sc;
     try {
       sc = new Scanner(new File(filename));
@@ -20,7 +20,7 @@ class Network{
       System.exit(0);
     }
       
-    // load file, initialize the stuff
+    
   }
   
   
