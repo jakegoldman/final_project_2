@@ -1,12 +1,12 @@
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.util.HashMap;
 
 public class FileEdit {
 
     Scanner sc;
     String rawClusts = "";
-   
     String rawProts = "";
     
     public FileEdit() {
@@ -34,23 +34,32 @@ public class FileEdit {
     }
 
     public static String makeNew(String rawClust, String rawProt) {
-	 String[] clustLines, protLines;
-	 String[] clust, prot;
-	
-	String output = "cluster,geneID,SymbolA,SymbolB\n";
-	
-        clustLines = rawClust.split("\n");
+	HashMap<String,String> map = new HashMap<String,String>();
+	String[] clustLines, protLines;
+	String[] clust,prot;
+	String output = "cluster,SymbolA,SymbolB,\n";
+
+	clustLines = rawClust.split("\n");
 	protLines = rawProt.split("\n");
 
-	for (int i = 1; i < clustLines.length; i++) {
+	for (int i = 0; i < clustLines.length; i++) {
 	    clust = clustLines[i].split(",");
-	    for (int j = 1; j < protLines.length; j++) {
-		prot = protLines[j].split(",");
-		if (prot[4].equals(clust[2])) {
-		    output += clust[0] + "," + clust[1] + "," + clust[2] + "," + prot[5] + "," + "\n";
-		}
+	    map.put(clust[2], clust[0]);
+	}
+
+	for (int i = 0; i < protLines.length; i++) {
+	    
+	    try{
+	    prot = protLines[i].split(",");
+	    if (map.get(prot[4]).equals(map.get(prot[5]))) {
+		output += map.get(prot[4]) + "," + prot[4] + "," + prot[5] + ",\n";
+	    }
+	    }
+	    catch (NullPointerException e) {
+		continue;
 	    }
 	}
+	    
 	return output;
     }
 
