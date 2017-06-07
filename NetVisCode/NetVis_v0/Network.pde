@@ -12,44 +12,47 @@ class Network{
   float restLength;
  
   
-  Network(String filename, String cluster){
-    Scanner sc = new Scanner("");
-    try {
-      sc = new Scanner(new File(filename));
-    }
-    catch ( FileNotFoundException e ) {
-      System.out.println("Error 404: File not found");
-      System.exit(0);
-    }
+  Network(String filename, int targetCluster){
+    Table table = loadTable( "clusterNew.csv", "header" );
     
+    // iterate through each row
     BinarySearchTree bst = new BinarySearchTree();
-    sc.nextLine();
-    sc.useDelimiter(",");
-    while( sc.hasNextLine() ){
-      if( sc.next().equals( cluster ) ){
-        Random random = new Random();
-        Node p1 = new Node( sc.next(), 350 + random.nextInt(501), 100 + random.nextInt(501), Kr);
-        Node p2 = new Node( sc.next(), 350 + random.nextInt(501), 100 + random.nextInt(501), Kr);
-        if( !bst.find( p1.protein ) ){
-          nodes.add(p1);
-          bst.add(p1.protein);
-        }
-        if( !bst.find( p2.protein ) ){
-          nodes.add(p2);
-          bst.add(p1.protein);
-        }
-        edges.add( new Edge( p1, p2, Ks, restLength ) );
+    for( TableRow row : table.rows() ){
+      int cluster = row.getInt("cluster");
+      if(cluster == targetCluster){   // if this interaction is within the cluster
         
-      } else {
-        sc.next();
-        sc.next();
+        String p1 = row.getString("SymbolA");
+        String p2 = row.getString("SymbolB");
+        Random random = new Random();
+        Node n1 = new Node( p1, 350 + random.nextInt(501), 100 + random.nextInt(501), Kr );
+        Node n2 = new Node( p2, 350 + random.nextInt(501), 100 + random.nextInt(501), Kr );
+        
+        Node bstRes1 = bst.find(n1); // the result of trying to find the node in the list of current nodes
+        Node bstRes2 = bst.find(n2);
+        
+        if( bstRes1 == null && bstRes2 == null){
+          bst.add(n1);
+          bst.add(n2);
+          nodes.add(n1);
+          nodes.add(n2);
+          edges.add( new Edge( n1, n2, Ks, restLength ) );
+        } else if (bstRes1 == null){
+          bst.add(n1);
+          nodes.add(n1);
+          edges.add( new Edge( n1, bstRes2, Ks, restLength ) );
+        } else if (bstRes2 == null){
+          bst.add(n2);
+          nodes.add(n2);
+          edges.add( new Edge( bstRes1, n2, Ks, restLength ) );
+        } else {
+          edges.add( new Edge( bstRes1, bstRes2, Ks, restLength) );
+        }
+        
       }
-      
     }
-       
-     
     
-    System.out.println(edges);
+    // System.out.println( nodes );
+    // System.out.println( edges );
   }
   
   
