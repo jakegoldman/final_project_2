@@ -5,6 +5,8 @@ void setup() {
   background(0);
   network = new Network("cluster.csv");
   
+  
+  
   // load the file
   // initialize nodes
   // initialize edges

@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
 class Network{
   
   Node[] nodes;
@@ -8,11 +11,21 @@ class Network{
  
   
   Network(String filename){
+    Scanner sc;
+    try {
+      sc = new Scanner(new File(filename));
+    }
+    catch (FileNotFoundException e) {
+      System.out.println("Error 404: File not found");
+      System.exit(0);
+    }
+      
     // load file, initialize the stuff
   }
   
   
-  void setRepForce(){
+  
+  void setRepForce(){ //check if for-each works in this case?
     for( Node applyTo : nodes ){
     PVector repForce = new PVector(0,0);
     for( Node toApply : nodes ){
@@ -28,6 +41,7 @@ class Network{
   void setSpringForce(){
     for( Edge e : edges ){
     e.calcSpringForce();
+    }
   }
   
   
@@ -38,9 +52,9 @@ class Network{
       n.update();
     }
   
-    for( Edge e : edges ){
-      e.update();
-    }
+    //for( Edge e : edges ){
+      //e.update();
+    //}
   }
   
 }
