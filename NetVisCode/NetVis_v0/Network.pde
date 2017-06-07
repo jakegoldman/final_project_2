@@ -1,10 +1,11 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 class Network{
   
-  Node[] nodes;
-  Edge[] edges;
+  ArrayList<Node> nodes;
+  ArrayList<Edge> edges;
   float Kr;
   float Ks;
   float restLength;
@@ -19,8 +20,18 @@ class Network{
       System.out.println("Error 404: File not found");
       System.exit(0);
     }
-      
     
+    BinarySearchTree bst = new BinarySearchTree();
+    sc.nextLine();
+    sc.useDelimiter(",");
+    while( sc.hasNextLine() ){
+      if( sc.next().equals( cluster ) ){
+        Random random = new Random();
+        Node p1 = new Node( sc.next(), 350 + random.nextInt(501), 100 + random.nextInt(501), Kr);
+        Node p2 = new Node( sc.next(), 350 + random.nextInt(501), 100 + random.nextInt(501), Kr);
+       
+      }
+    }
   }
   
   
