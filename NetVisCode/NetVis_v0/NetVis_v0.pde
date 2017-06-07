@@ -3,7 +3,7 @@ Network network;
 void setup() {
   size(1200, 700);
   background(0);
-  network = new Network("cluster.csv", "1");
+  network = new Network("data/clusterNew.txt", "1");
   
   
   

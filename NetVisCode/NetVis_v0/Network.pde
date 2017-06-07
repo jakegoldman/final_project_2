@@ -17,7 +17,7 @@ class Network{
     try {
       sc = new Scanner(new File(filename));
     }
-    catch (FileNotFoundException e) {
+    catch ( FileNotFoundException e ) {
       System.out.println("Error 404: File not found");
       System.exit(0);
     }
