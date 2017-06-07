@@ -48,4 +48,20 @@ class BinarySearchTree {
   }
   
   
+  
+  public boolean find(String prot){
+    Nodule current = root;
+    while( current!=null ) {
+      if( current.data.equals(prot) ) {
+        return true;
+      } else if( current.data.compareTo( prot ) > 0 ) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+    return false;
+  }
+  
+  
 }

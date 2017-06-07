@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
@@ -29,9 +30,20 @@ class Network{
         Random random = new Random();
         Node p1 = new Node( sc.next(), 350 + random.nextInt(501), 100 + random.nextInt(501), Kr);
         Node p2 = new Node( sc.next(), 350 + random.nextInt(501), 100 + random.nextInt(501), Kr);
-       
+        if( !bst.find( p1.protein ) ){
+          nodes.add(p1);
+          bst.add(p1.protein);
+        }
+        if( !bst.find( p2.protein ) ){
+          nodes.add(p2);
+          bst.add(p1.protein);
+        }
+        edges.add( new Edge( p1, p2, Ks, restLength ) );
+        
       }
     }
+       
+       
   }
   
   
