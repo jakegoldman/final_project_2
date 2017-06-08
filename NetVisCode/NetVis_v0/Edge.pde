@@ -29,7 +29,7 @@ class Edge{
   }
   
   
-  String toString(){
+  public String toString(){
     return "" + n1 + " " + n2;
   }
   

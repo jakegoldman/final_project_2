@@ -7,9 +7,9 @@ class Network{
   
   ArrayList<Node> nodes = new ArrayList<Node>();
   ArrayList<Edge> edges = new ArrayList<Edge>();
-  float Kr;
-  float Ks;
-  float restLength;
+  float Kr = 100;
+  float Ks = 1;
+  float restLength = 50;
  
   
   Network(String filename, int targetCluster){
@@ -25,6 +25,7 @@ class Network{
         String p2 = row.getString("SymbolB");
         Random random = new Random();
         Node n1 = new Node( p1, 350 + random.nextInt(501), 100 + random.nextInt(501), Kr );
+        //println(350 + random.nextInt(501));
         Node n2 = new Node( p2, 350 + random.nextInt(501), 100 + random.nextInt(501), Kr );
         
         Node bstRes1 = bst.find(n1); // the result of trying to find the node in the list of current nodes
@@ -57,22 +58,36 @@ class Network{
   
   
   
-  void setRepForce(){ //check if for-each works in this case?
-    for( Node applyTo : nodes ){
+  //void setRepForce(){ //check if for-each works in this case?
+    //for( Node applyTo : nodes ){
+      //PVector repForce = new PVector(0,0);
+      //for( Node toApply : nodes ){
+        //if( toApply != applyTo ){ // make sure not to apply a rep force to itself
+          //repForce.add( toApply.repel(applyTo) );
+        //}
+      //}
+      //applyTo.repForce = repForce;
+    //}
+  //}
+  
+  void setRepForce() {
+    for (int i = 0; i < nodes.size(); i++) {
       PVector repForce = new PVector(0,0);
-      for( Node toApply : nodes ){
-        if( toApply != applyTo ){ // make sure not to apply a rep force to itself
-          repForce.add( toApply.repel(applyTo) );
+      for (int j = 0; j < nodes.size(); j++) {
+        if (nodes.get(i) != nodes.get(j)) {
+          //println(repForce);
+          repForce.add(nodes.get(i).repel(nodes.get(j)));
         }
       }
-      applyTo.repForce = repForce;
+      nodes.get(i).repForce = repForce;
     }
   }
   
   
   void setSpringForce(){
-    for( Edge e : edges ){
-      e.calcSpringForce();
+    //for( Edge e : edges ){
+    for(int i = 0; i < edges.size(); i++) {
+      edges.get(i).calcSpringForce();
     }
   }
   
@@ -81,10 +96,11 @@ class Network{
     setRepForce();
     setSpringForce();
     for( Node n : nodes ){
+      //println("repF" + n.repForce);
+      //println("repS" + n.springForce);
       n.update();
       n.display();
     }
-  
     for( Edge e : edges ){
       e.display();
     }
