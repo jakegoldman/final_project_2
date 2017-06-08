@@ -30,6 +30,10 @@ class Node implements Comparable<Node> {
   }
   
   void update() {
+    //if (repForce.x + repForce.y < 0.0001 && 
+      //  springForce.x + springForce.y < 0.0001) {
+     // return;
+    //}
     pos = pos.add(repForce);
     pos = pos.add(springForce);
     if(pos.x < 0) {
