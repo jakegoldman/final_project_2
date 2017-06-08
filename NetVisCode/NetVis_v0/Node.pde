@@ -1,4 +1,4 @@
-class Node {
+class Node implements Comparable<Node> {
   
   String protein;
   PVector pos; //position
@@ -29,6 +29,8 @@ class Node {
     pos = pos.add(repForce);
     pos = pos.add(springForce);
   }
+ 
+  
   
   PVector repel(Node other) {//calculates repel force
     PVector ans = new PVector(0,0);
@@ -37,6 +39,26 @@ class Node {
     return ans;
     //Fr = Kr/d^2
   }
+  
+  
+  String toString(){
+    return protein;
+  }
+  
+  
+  int compareTo(Node other){
+    return protein.compareTo(other.protein);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   float getDist(Node other) {

@@ -2,11 +2,11 @@ class BinarySearchTree {
 
   class Nodule {
   
-    String data;
+    Node data;
     Nodule left;
     Nodule right;
   
-    Nodule(String data){
+    Nodule(Node data){
       this.data = data;
     }
   }
@@ -19,7 +19,8 @@ class BinarySearchTree {
   }
   
   
-  public void add(String prot){
+
+  public void add(Node prot){
     Nodule toAdd = new Nodule( prot );
     if( root==null ){
       root = toAdd;
@@ -48,19 +49,19 @@ class BinarySearchTree {
   }
   
   
-  
-  public boolean find(String prot){
+
+  public Node find(Node prot){
     Nodule current = root;
     while( current!=null ) {
-      if( current.data.equals(prot) ) {
-        return true;
+      if( current.data.protein.equals(prot.protein) ) {
+        return current.data;
       } else if( current.data.compareTo( prot ) > 0 ) {
         current = current.left;
       } else {
         current = current.right;
       }
     }
-    return false;
+    return null;
   }
   
   
