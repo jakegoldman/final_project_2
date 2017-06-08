@@ -8,7 +8,7 @@ class Network{
   ArrayList<Node> nodes = new ArrayList<Node>();
   ArrayList<Edge> edges = new ArrayList<Edge>();
   float Kr = 100;
-  float Ks = 0.01;
+  float Ks = 0.00000001;
   float restLength = 50;
  
   
@@ -93,6 +93,7 @@ class Network{
   
   
   void update(){
+    background(100);
     setRepForce();
     setSpringForce();
     for( Node n : nodes ){
