@@ -14,11 +14,10 @@ class Node implements Comparable<Node> {
     //println(x);
     pos = new PVector (x, y);
     println(pos);
-    pos.x = 0;
-    pos.y = 0;
     protein = name;
     this.Kr = Kr;
     repForce = new PVector(0,0);
+    springForce = new PVector(0,0);
     //println(pos.x);
   }
   
@@ -49,25 +48,21 @@ class Node implements Comparable<Node> {
   }
  
   
-  
-  //PVector repel(Node other) {//calculates repel force
-    //PVector ans = new PVector(0,0);
-    //ans.x = Kr / ( ( pos.x - other.pos.x ) * ( pos.x - other.pos.x ) );
-    //ans.y = Kr / ( ( pos.y - other.pos.y ) * ( pos.y - other.pos.y ) );
-    //println("ansy" + ans.y);
-    //println(ans);
-    //return ans;
-    //Fr = Kr/d^2
-  //}
-  
   PVector repel (Node other) {//calculates repel force
     PVector ans = new PVector(10,10);
     float dx = other.pos.x - pos.x;
+    //println(other.pos.x);
+    //println(pos.x);
     float dy = other.pos.y - pos.y;
     if (dx != 0 || dy != 0) {
       float distance = getDist(other);
-      ans.x = Kr / (distance * distance) * dx/distance;
-      ans.y = Kr / (distance * distance) * dy/distance;
+      ans.x = (Kr / (distance * distance)) * dx/distance;
+      println("ansx" + ans.x);
+      ans.y = (Kr / (distance * distance)) * dy/distance;
+      println("ansy" + ans.y);
+    }
+    else {
+      println("dx or dy was 0");
     }
     return ans;
   }
