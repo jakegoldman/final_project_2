@@ -12,7 +12,7 @@ class Network{
   float restLength = 50;
  
   
-  Network(String filename, int targetCluster){
+  Network(int targetCluster){
     Table table = loadTable( "clusterNew.csv", "header" );
     
     // iterate through each row

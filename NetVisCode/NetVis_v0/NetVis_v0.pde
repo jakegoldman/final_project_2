@@ -2,7 +2,7 @@ Network network;
 
 void setup() {
   size(1200, 700);
-  network = new Network("/Users/Jake/github/final_project_2/NetVisCode/clusterNew.txt", 1319);
+  network = new Network(1320);
   background(100);
 }
 
