@@ -5,9 +5,10 @@ class Node implements Comparable<Node> {
   PVector repForce; // sum of repelling force from all other nodes
   float Kr; // constant for the repForce
   PVector springForce; // spring force to act on it
-  
+  color inside;
   Node[] neighbors; //nodes it is connected to
   boolean highlighted; //if selected
+  int size;
   
   
   Node(String name, int x, int y, float Kr) {
@@ -18,18 +19,24 @@ class Node implements Comparable<Node> {
     this.Kr = Kr;
     repForce = new PVector(0,0);
     springForce = new PVector(0,0);
+    inside = color(128,0,128);
+    size = 15;
     //println(pos.x);
   }
   
   
   void display() {
-    fill(128,0,128);//color purple
+    fill(inside);//color
     //println(pos);
-    ellipse(pos.x, pos.y, 10, 10); //10 is the size
+    ellipse(pos.x, pos.y, size, size); //10 is the size
     //println(pos.x);
   }
   
   void update() {
+    //if (repForce.x + repForce.y < 0.0001 && 
+      //  springForce.x + springForce.y < 0.0001) {
+     // return;
+    //}
     pos = pos.add(repForce);
     pos = pos.add(springForce);
     if(pos.x < 0) {
@@ -44,7 +51,18 @@ class Node implements Comparable<Node> {
     if(pos.y > height) {
       pos.y = height;
     }
-         
+    
+    //if(toHighlight) {
+      float dx = (mouseX - tX) - (pos.x);
+      float dy = (mouseY - tY) - (pos.y);
+      inside = color (128, 0, 128);
+      if (abs(dx) < size/2.0 &&
+          abs(dy) < size/2.0) {
+            inside = color(50, 255, 50);
+            fill(0);
+            text(protein,pos.x + size + 2, pos.y + size + 2);
+          }
+    //}
   }
  
   

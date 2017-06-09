@@ -7,12 +7,12 @@ class Network{
   
   ArrayList<Node> nodes = new ArrayList<Node>();
   ArrayList<Edge> edges = new ArrayList<Edge>();
-  float Kr = 100;
+  float Kr = 1;
   float Ks = 0.00000001;
   float restLength = 50;
  
   
-  Network(String filename, int targetCluster){
+  Network(int targetCluster){
     Table table = loadTable( "clusterNew.csv", "header" );
     
     // iterate through each row
@@ -58,17 +58,6 @@ class Network{
   
   
   
-  //void setRepForce(){ //check if for-each works in this case?
-    //for( Node applyTo : nodes ){
-      //PVector repForce = new PVector(0,0);
-      //for( Node toApply : nodes ){
-        //if( toApply != applyTo ){ // make sure not to apply a rep force to itself
-          //repForce.add( toApply.repel(applyTo) );
-        //}
-      //}
-      //applyTo.repForce = repForce;
-    //}
-  //}
   
   void setRepForce() {
     for (int i = 0; i < nodes.size(); i++) {
