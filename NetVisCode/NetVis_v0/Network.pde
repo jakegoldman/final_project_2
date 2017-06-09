@@ -89,10 +89,12 @@ class Network{
       println("repF" + n.repForce);
       println("repS" + n.springForce);
       n.update();
-      n.display();
     }
     for( Edge e : edges ){
       e.display();
+    }
+    for( Node n : nodes ){
+      n.display();
     }
   }
   
