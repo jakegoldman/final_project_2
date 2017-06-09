@@ -1,6 +1,7 @@
 Network network;
 float zoomFactor;
 float tX, tY;
+boolean toHighlight;
 
 
 void setup() {
@@ -33,10 +34,14 @@ void keyPressed() {
 }
 
 
-void mouseWheel(MouseEvent event) {
+void mouseWheel(MouseEvent event) {//change degree of zoom towards mouse
   println("mouse be wheeling");
   float e = event.getCount();
   zoomFactor += e / 100.0;
   tX = tX - e/100.0 * mouseX;
   tY = tY - e/100.0 * mouseY;
 }
+
+//void mouseClicked() {
+//  toHighlight = true;
+//}
