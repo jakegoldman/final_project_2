@@ -53,8 +53,8 @@ class Node implements Comparable<Node> {
     }
     
     //if(toHighlight) {
-      float dx = (mouseX - tX/2) - (pos.x);
-      float dy = (mouseY - tY/2) - (pos.y);
+      float dx = (mouseX - tX) - (pos.x);
+      float dy = (mouseY - tY) - (pos.y);
       inside = color (128, 0, 128);
       if (abs(dx) < size/2.0 &&
           abs(dy) < size/2.0) {
