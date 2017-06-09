@@ -25,7 +25,13 @@ void keyPressed() {
   if (key == 'q') {
     exit();
   }
+  if (key == 'r') {
+    zoomFactor = 1;
+    tX = 0;
+    tY = 0;
+  }
 }
+
 
 void mouseWheel(MouseEvent event) {
   println("mouse be wheeling");
