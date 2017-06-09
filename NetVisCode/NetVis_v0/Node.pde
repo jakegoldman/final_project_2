@@ -53,12 +53,14 @@ class Node implements Comparable<Node> {
     }
     
     //if(toHighlight) {
-      float dx = mouseX - pos.x;
-      float dy = mouseY - pos.y;
+      float dx = (mouseX - tX/2) - (pos.x);
+      float dy = (mouseY - tY/2) - (pos.y);
       inside = color (128, 0, 128);
       if (abs(dx) < size/2.0 &&
           abs(dy) < size/2.0) {
             inside = color(50, 255, 50);
+            fill(0);
+            text(protein,pos.x + size + 2, pos.y + size + 2);
           }
     //}
   }
