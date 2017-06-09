@@ -7,11 +7,18 @@ Algorithm cred to Michael J. McGuffin; retrieved from http://profs.etsmtl.ca/mmc
 
 Features/Bugs (as of 6/8/17):
 
+Features:
 -Visualization works
--Sometimes nodes are pushed too far against edge of screen
--Computation increases after program runs for a longer time, especially with
-	     the larger clusters.
+-zoom in on mouse using mousewheel (rest with 'r' key)
+-highlight a node by mousing over; also displays protein name
+-quit program with 'q' key
 
+
+Bugs:
+-Sometimes nodes are pushed too far against edge of screen
+-****Computation increases after program runs for a longer time, especially with
+	     the larger clusters.****
+-the mouse coordinates do not translate with the zoom
 
 
 Development Log (as of 6/8/17):
@@ -35,3 +42,5 @@ Development Log (as of 6/8/17):
 
 6/8/17: Jerome fixed numerous bugs that were preventing the program from running
 	At this point it runs, but computation increases with time.
+	Jerome added a zoom feature.
+	Jerome added a highlight with protein name when mouseover feature.
