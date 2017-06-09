@@ -22,8 +22,8 @@ class Edge{
   void calcSpringForce(){
     float x = Ks * ( (n1.pos.x - n2.pos.x) - restLength );
     float y = Ks * ( (n1.pos.y - n2.pos.y) - restLength );
-    n1.springForce = n1.springForce.add(new PVector(x,y));
-    n2.springForce = n2.springForce.add(new PVector(-x,-y));
+    n1.springForce = n1.springForce.add(new PVector(-x/2,-y/2));
+    n2.springForce = n2.springForce.add(new PVector(x/2, y/2));
     //Fs = Ks (d - L)
   }
   

@@ -2,7 +2,7 @@ Network network;
 
 void setup() {
   size(1200, 700);
-  network = new Network(10);
+  network = new Network(70);
   background(100);
 }
 

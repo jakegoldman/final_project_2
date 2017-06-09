@@ -25,7 +25,7 @@ class Node implements Comparable<Node> {
   void display() {
     fill(128,0,128);//color purple
     //println(pos);
-    ellipse(pos.x, pos.y, 10, 10); //10 is the size
+    ellipse(pos.x, pos.y, 11, 11); //10 is the size
     //println(pos.x);
   }
   

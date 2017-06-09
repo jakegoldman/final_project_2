@@ -7,7 +7,7 @@ class Network{
   
   ArrayList<Node> nodes = new ArrayList<Node>();
   ArrayList<Edge> edges = new ArrayList<Edge>();
-  float Kr = 100;
+  float Kr = 1;
   float Ks = 0.00000001;
   float restLength = 50;
  
