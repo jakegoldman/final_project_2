@@ -22,10 +22,10 @@ void draw() {
 }
 
 void keyPressed() {
-  if (key == 'q') {
+  if (key == 'q') {//quits program
     exit();
   }
-  if (key == 'r') {
+  if (key == 'r') {//returns to default view
     zoomFactor = 1;
     tX = 0;
     tY = 0;

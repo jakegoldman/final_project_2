@@ -3,6 +3,8 @@ Jake Goldman
 
 Team Name: The Goldbergs
 
+Algorithm cred to Michael J. McGuffin; retrieved from http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf
+
 Features/Bugs (as of 6/8/17):
 
 -Visualization works
