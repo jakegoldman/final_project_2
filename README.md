@@ -10,13 +10,13 @@ Algorithm cred to Michael J. McGuffin; retrieved from http://profs.etsmtl.ca/mmc
 
 Libraries used: controlp5
 
-\n\n
+
 **Brief description**:
 
 Our project is a protein network visualization. The journal Nature published an article on May 17 titled Architecture of the human interactome defines protein communities and disease networks. (http://www.nature.com/nature/journal/v545/n7655/full/nature22366.html) The paper examines protein interaction and includes a dataset of around 56000 proteins interactions with each other. The paper also details 1320 clusters of these proteins, which we visualized, since the entire dataset was too large to compute. Our program lets the user choose a cluster and examine the network graph of that cluster, with various interactive features.
 
 
-\n\n\n
+
 
 **Features/Bugs** (as of 6/8/17):
 
@@ -32,6 +32,8 @@ Features:
 
 -modify force constants in top left corner using sliders
 
+-search for a specific protein in textbox (make sure it is uppercase). This highlightes the node, displays its name, and highlights the edges as well.
+
 
 Bugs:
 
@@ -44,27 +46,27 @@ Bugs:
 
 -modifying sliders will make it move rapidly without slowing down
 
-\n\n
+
 
 
 **Directions on compiling code**:
 
-1. Install controlp5 library\n
-2. Run processing sketch (make sure it is the latest version: v1)\n
-3. Examine network\n
+1. Install controlp5 library
+2. Run processing sketch (make sure it is the latest version: v1)
+3. Examine network
 
-\n\n
+
 
 **Instructions on using program**:
 
-1. Press run and the network will appear\n
-2. Hover over node to see protein name\n
-3. Scroll/mousewheel to zoom in and out\n
-4. The first slider on the top left adjusts the repel force (nodes farther apart).\n
-5. The second slider adjusts the spring force (nodes closer together).\n
-6. Use the textbox to search for a specific protein.\n
-7. If you want to reset the zoom and forces press the 'r' key.\n
-8. If you want to quit the program, press 'q'.\n
+1. Press run and the network will appear
+2. Hover over node to see protein name
+3. Scroll/mousewheel to zoom in and out
+4. The first slider on the top left adjusts the repel force (nodes farther apart).
+5. The second slider adjusts the spring force (nodes closer together).
+6. Use the textbox to search for a specific protein.
+7. If you want to reset the zoom and forces press the 'r' key.
+8. If you want to quit the program, press 'q'.
 
 
 \n\n

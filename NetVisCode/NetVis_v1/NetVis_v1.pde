@@ -9,7 +9,7 @@ ControlP5 cp5;
 String input; //textbox input
 float sliderR;
 float sliderS;
-
+int clusternum;
 
 void setup() {
   size(1200, 700);
@@ -19,7 +19,8 @@ void setup() {
   sliderS = 0.0000001;
   input = "placeholder";
   makeWidgets();
-  network = new Network(70);
+  clusternum = 70;
+  network = new Network(clusternum);
   background(100);
   zoomFactor = 1;
   tX = 0;
@@ -46,6 +47,8 @@ void draw() {
   translate(tX, tY);
   network.update();
   popMatrix(); 
+  fill(0);
+  text("cluster: " + clusternum, 20, 200);
 }
 
 void keyPressed() {
