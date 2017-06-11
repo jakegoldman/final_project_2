@@ -10,13 +10,21 @@ Algorithm cred to Michael J. McGuffin; retrieved from http://profs.etsmtl.ca/mmc
 
 Libraries used: controlp5
 
-*Features/Bugs (as of 6/8/17)*:
+\n\n
+**Brief description**:
+
+Our project is a protein network visualization. The journal Nature published an article on May 17 titled Architecture of the human interactome defines protein communities and disease networks. (http://www.nature.com/nature/journal/v545/n7655/full/nature22366.html) The paper examines protein interaction and includes a dataset of around 56000 proteins interactions with each other. The paper also details 1320 clusters of these proteins, which we visualized, since the entire dataset was too large to compute. Our program lets the user choose a cluster and examine the network graph of that cluster, with various interactive features.
+
+
+\n\n\n
+
+**Features/Bugs** (as of 6/8/17):
 
 Features:
 
 -Visualization works
 
--zoom in on mouse using mousewheel (rest with 'r' key)
+-zoom in on mouse using mousewheel (reset with 'r' key)
 
 -highlight a node by mousing over; also displays protein name
 
@@ -36,8 +44,34 @@ Bugs:
 
 -modifying sliders will make it move rapidly without slowing down
 
+\n\n
 
-*Development Log* (as of 6/11/17):
+
+**Directions on compiling code**:
+
+1. Install controlp5 library\n
+2. Run processing sketch (make sure it is the latest version: v1)\n
+3. Examine network\n
+
+\n\n
+
+**Instructions on using program**:
+
+1. Press run and the network will appear\n
+2. Hover over node to see protein name\n
+3. Scroll/mousewheel to zoom in and out\n
+4. The first slider on the top left adjusts the repel force (nodes farther apart).\n
+5. The second slider adjusts the spring force (nodes closer together).\n
+6. Use the textbox to search for a specific protein.\n
+7. If you want to reset the zoom and forces press the 'r' key.\n
+8. If you want to quit the program, press 'q'.\n
+
+
+\n\n
+
+
+
+**Development Log** (as of 6/11/17):
 
 6/2/17: Finalized plan together in class
 
