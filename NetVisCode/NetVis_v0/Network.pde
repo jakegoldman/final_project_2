@@ -1,7 +1,5 @@
 import java.util.Random;
 import java.util.Arrays;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
 
 class Network{
   
