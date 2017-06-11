@@ -26,8 +26,8 @@ void setup() {
 }
 
 void makeWidgets() {
-  cp5.addSlider("sliderR").setPosition(20, 20).setRange(0.1, 10000);
-  cp5.addSlider("sliderS").setPosition(20, 50).setRange(0.000000001, 0.001);
+  cp5.addSlider("sliderR").setPosition(20, 20).setRange(0.01, 100);
+  cp5.addSlider("sliderS").setPosition(20, 50).setRange(0.0000001, 0.0001);
 }
 
 void draw() {
@@ -47,6 +47,8 @@ void keyPressed() {
     zoomFactor = 1;
     tX = 0;
     tY = 0;
+    sliderR = 1;
+    sliderS = 0.0000001; 
   }
 }
 
