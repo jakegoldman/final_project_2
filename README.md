@@ -1,22 +1,32 @@
 Jerome Freudenberg
+
 Jake Goldman
 
-Team Name: The Goldbergs
+Period 6
+
+*Team Name*: The Goldbergs
 
 Algorithm cred to Michael J. McGuffin; retrieved from http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf
 
 Libraries used: controlp5
 
-Features/Bugs (as of 6/8/17):
+*Features/Bugs (as of 6/8/17)*:
 
 Features:
+
 -Visualization works
+
 -zoom in on mouse using mousewheel (rest with 'r' key)
+
 -highlight a node by mousing over; also displays protein name
+
 -quit program with 'q' key
+
+-modify force constants in top left corner using sliders
 
 
 Bugs:
+
 -Sometimes nodes are pushed too far against edge of screen
 
 -****Computation increases after program runs for a longer time, especially with
@@ -24,8 +34,10 @@ Bugs:
 	     
 -the mouse coordinates do not translate with the zoom
 
+-modifying sliders will make it move rapidly without slowing down
 
-Development Log (as of 6/8/17):
+
+*Development Log* (as of 6/11/17):
 
 6/2/17: Finalized plan together in class
 
