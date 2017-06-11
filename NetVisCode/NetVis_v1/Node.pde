@@ -75,12 +75,12 @@ class Node implements Comparable<Node> {
     if (dx != 0 || dy != 0) {
       float distance = getDist(other);
       ans.x = (sliderR / (distance * distance)) * dx/distance;
-      println("ansx" + ans.x);
+      //println("ansx" + ans.x);
       ans.y = (sliderR / (distance * distance)) * dy/distance;
-      println("ansy" + ans.y);
+      //println("ansy" + ans.y);
     }
     else {
-      println("dx or dy was 0");
+      //println("dx or dy was 0");
     }
     return ans;
   }

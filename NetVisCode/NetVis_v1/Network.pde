@@ -86,8 +86,8 @@ class Network{
     setRepForce();
     setSpringForce();
     for( Node n : nodes ){
-      println("repF" + n.repForce);
-      println("repS" + n.springForce);
+      //println("repF" + n.repForce);
+      //println("repS" + n.springForce);
       n.update();
     }
     for( Edge e : edges ){
