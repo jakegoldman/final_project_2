@@ -38,9 +38,6 @@ Features:
 Bugs:
 
 -Sometimes nodes are pushed too far against edge of screen
-
--****Computation increases after program runs for a longer time, especially with
-	     the larger clusters.**** (but only on Jerome's computer?)
 	     
 -the mouse coordinates do not translate with the zoom
 
