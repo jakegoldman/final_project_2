@@ -15,6 +15,10 @@ class Edge{
   void display() {
     stroke(255,140,0);
     strokeWeight(1.4);
+    if (n1.highlighted || n2.highlighted) {
+      stroke(50, 255, 50);
+      strokeWeight(2);
+    }
     line(n1.pos.x, n1.pos.y, n2.pos.x, n2.pos.y);
   }
    

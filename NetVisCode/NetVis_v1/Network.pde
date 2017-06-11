@@ -91,6 +91,9 @@ class Network{
       if (input.equals(n.protein)) {
         n.highlighted = true;
       }
+      else {
+        n.highlighted = false;
+      }
       n.update();
     }
     for( Edge e : edges ){
