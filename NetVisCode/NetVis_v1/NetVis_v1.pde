@@ -4,15 +4,30 @@ Network network;
 float zoomFactor;
 float tX, tY;
 boolean toHighlight;
+PFont font;
+ControlP5 cp5;
+String input; //textbox input
+float sliderR;
+float sliderS;
 
 
 void setup() {
   size(1200, 700);
+  font = createFont("arial", 20);
+  cp5 = new ControlP5(this);//"this" lets u run whatever method u put after cp5
+  sliderR = 1;
+  sliderS = 0.0000001;
+  makeWidgets();
   network = new Network(70);
   background(100);
   zoomFactor = 1;
   tX = 0;
   tY = 0;
+}
+
+void makeWidgets() {
+  cp5.addSlider("sliderR").setPosition(20, 20).setRange(0.1, 10000);
+  cp5.addSlider("sliderS").setPosition(20, 50).setRange(0.000000001, 0.001);
 }
 
 void draw() {

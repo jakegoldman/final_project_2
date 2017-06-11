@@ -5,6 +5,8 @@ Team Name: The Goldbergs
 
 Algorithm cred to Michael J. McGuffin; retrieved from http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf
 
+Libraries used: controlp5
+
 Features/Bugs (as of 6/8/17):
 
 Features:
@@ -16,8 +18,10 @@ Features:
 
 Bugs:
 -Sometimes nodes are pushed too far against edge of screen
+
 -****Computation increases after program runs for a longer time, especially with
-	     the larger clusters.****
+	     the larger clusters.**** (but only on Jerome's computer?)
+	     
 -the mouse coordinates do not translate with the zoom
 
 
@@ -44,3 +48,7 @@ Development Log (as of 6/8/17):
 	At this point it runs, but computation increases with time.
 	Jerome added a zoom feature.
 	Jerome added a highlight with protein name when mouseover feature.
+
+6/9/17: Jake modified display so that nodes appear on top of edges.
+
+6/11/17: Jerome added sliders using the controlp5 library.
