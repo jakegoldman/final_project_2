@@ -69,7 +69,7 @@ Bugs:
 8. If you want to quit the program, press 'q'.
 
 
-\n\n
+
 
 
 
@@ -99,4 +99,4 @@ Bugs:
 
 6/9/17: Jake modified display so that nodes appear on top of edges.
 
-6/11/17: Jerome added sliders using the controlp5 library.
+6/11/17: Jerome added force sliders and search feature using the controlp5 library.
