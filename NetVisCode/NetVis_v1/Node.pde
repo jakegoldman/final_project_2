@@ -32,6 +32,9 @@ class Node implements Comparable<Node> {
     }
     //println(pos);
     ellipse(pos.x, pos.y, size, size); //10 is the size
+    if (highlighted) {
+      highlight();
+    }
     //println(pos.x);
   }
   
@@ -53,9 +56,6 @@ class Node implements Comparable<Node> {
     }
     if(pos.y > height) {
       pos.y = height;
-    }
-    if (highlighted) {
-      highlight();
     }
     //if(toHighlight) {
       float dx = (mouseX - tX) - (pos.x);

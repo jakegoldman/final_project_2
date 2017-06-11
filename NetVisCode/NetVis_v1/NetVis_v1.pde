@@ -19,7 +19,7 @@ void setup() {
   sliderS = 0.0000001;
   input = "placeholder";
   makeWidgets();
-  clusternum = 70;
+  clusternum = 70; //change this number from 1 - 1320 to visualize different cluster
   network = new Network(clusternum);
   background(100);
   zoomFactor = 1;

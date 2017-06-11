@@ -46,6 +46,8 @@ Bugs:
 
 -modifying sliders will make it move rapidly without slowing down
 
+-protein name is displayed underneath edge making it hard to read
+
 
 
 
@@ -67,6 +69,7 @@ Bugs:
 6. Use the textbox to search for a specific protein.
 7. If you want to reset the zoom and forces press the 'r' key.
 8. If you want to quit the program, press 'q'.
+9. If you want to examine a different cluster, go into the code and change the variable clusternum in the setup function (line 22).
 
 
 
