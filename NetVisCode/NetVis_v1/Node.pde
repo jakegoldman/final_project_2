@@ -27,6 +27,7 @@ class Node implements Comparable<Node> {
   
   void display() {
     fill(inside);//color
+    stroke(inside);
     if (highlighted) {
       fill(50, 255, 50);
     }
