@@ -27,6 +27,9 @@ class Node implements Comparable<Node> {
   
   void display() {
     fill(inside);//color
+    if (highlighted) {
+      fill(50, 255, 50);
+    }
     //println(pos);
     ellipse(pos.x, pos.y, size, size); //10 is the size
     //println(pos.x);
@@ -51,16 +54,16 @@ class Node implements Comparable<Node> {
     if(pos.y > height) {
       pos.y = height;
     }
-    
+    if (highlighted) {
+      highlight();
+    }
     //if(toHighlight) {
       float dx = (mouseX - tX) - (pos.x);
       float dy = (mouseY - tY) - (pos.y);
       inside = color (128, 0, 128);
       if (abs(dx) < size/2.0 &&
           abs(dy) < size/2.0) {
-            inside = color(50, 255, 50);
-            fill(0);
-            text(protein,pos.x + size + 2, pos.y + size + 2);
+            highlight();
           }
     //}
   }
@@ -106,7 +109,9 @@ class Node implements Comparable<Node> {
   }
   
   void highlight() {
-    //change color + other stuff
+     inside = color(50, 255, 50);
+     fill(0);
+     text(protein,pos.x + size + 2, pos.y + size + 2);
   }
   
   

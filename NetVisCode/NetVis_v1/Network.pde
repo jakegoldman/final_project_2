@@ -88,6 +88,9 @@ class Network{
     for( Node n : nodes ){
       //println("repF" + n.repForce);
       //println("repS" + n.springForce);
+      if (input.equals(n.protein)) {
+        n.highlighted = true;
+      }
       n.update();
     }
     for( Edge e : edges ){

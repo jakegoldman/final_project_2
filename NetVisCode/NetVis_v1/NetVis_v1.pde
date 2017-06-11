@@ -17,6 +17,7 @@ void setup() {
   cp5 = new ControlP5(this);//"this" lets u run whatever method u put after cp5
   sliderR = 1;
   sliderS = 0.0000001;
+  input = "placeholder";
   makeWidgets();
   network = new Network(70);
   background(100);
