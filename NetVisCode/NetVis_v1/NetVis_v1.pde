@@ -9,7 +9,8 @@ ControlP5 cp5;
 String input; //textbox input
 float Rep_Force;
 float Spring_Force;
-int clusternum;
+int clusternum = 70; //change this number from 1 - 1320 to visualize different cluster (1 is largest cluster, 1320 is smallest);
+boolean wrongCluster = false;
 
 void setup() {
   size(1200, 700);
@@ -19,7 +20,6 @@ void setup() {
   Spring_Force = 0.0000001;
   input = "placeholder";
   makeWidgets();
-  clusternum = 70; //change this number from 1 - 1320 to visualize different cluster (1 is largest cluster, 1320 is smallest)
   network = new Network(clusternum);
   background(100);
   zoomFactor = 1;
@@ -42,6 +42,21 @@ void search() {
   println(input);
 }
 
+void switchCluster(){
+  String clusterInput = cp5.get(Textfield.class, "cluster").getText();
+  try{
+    clusternum = Integer.parseInt( clusterInput );
+    if(clusternum < 1 || clusternum > 1320){
+      wrongCluster = true;
+    } else {
+      setup();
+    }
+  } catch( NumberFormatException e ){
+    wrongCluster = true;
+  }
+}
+
+
 void draw() {
   background(100);
   pushMatrix();
@@ -50,6 +65,9 @@ void draw() {
   network.update();
   popMatrix(); 
   fill(0);
+  if( wrongCluster ){
+    text("Please input a number from 1-1320", 20, 280); // error message for putting in an invalid cluster
+  }
 }
 
 void keyPressed() {
