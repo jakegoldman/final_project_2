@@ -45,14 +45,13 @@ void search() {
 void switchCluster(){
   String clusterInput = cp5.get(Textfield.class, "cluster").getText();
   try{
-    clusternum = Integer.parseInt( clusterInput );
-    if(clusternum < 1 || clusternum > 1320){
-      wrongCluster = true;
-    } else {
+    int num = Integer.parseInt( clusterInput );
+    if(num >= 1 && num <= 1320){
+      clusternum = num;
       setup();
     }
   } catch( NumberFormatException e ){
-    wrongCluster = true;
+    
   }
 }
 
@@ -65,9 +64,8 @@ void draw() {
   network.update();
   popMatrix(); 
   fill(0);
-  if( wrongCluster ){
-    text("Please input a number from 1-1320", 20, 280); // error message for putting in an invalid cluster
-  }
+  text("The current cluster is: " + clusternum, 20, 280);
+  text("Please input a number from 1-1320 to change clusters", 20, 290); // error message for putting in an invalid cluster
 }
 
 void keyPressed() {
