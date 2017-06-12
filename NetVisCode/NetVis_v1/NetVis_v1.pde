@@ -32,6 +32,8 @@ void makeWidgets() {
   cp5.addSlider("Spring_Force").setPosition(20, 50).setRange(0.0000001, 0.0001);
   cp5.addTextfield("protein").setPosition(20, 80).setSize(200,40).setAutoClear(false);
   cp5.addBang("search").setPosition(20, 140).setSize(40,10);
+  cp5.addTextfield("cluster").setPosition(20,200).setSize(30,20);
+  cp5.addBang("switchCluster").setPosition(20,240).setSize(30,10);
 }
 
 void search() {
@@ -48,7 +50,6 @@ void draw() {
   network.update();
   popMatrix(); 
   fill(0);
-  text("cluster: " + clusternum, 20, 200);
 }
 
 void keyPressed() {
