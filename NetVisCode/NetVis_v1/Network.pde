@@ -79,11 +79,11 @@ class Network{
   }
   
   
-  void update(){
-    background(100);
-    setRepForce();
-    setSpringForce();
-    for( Node n : nodes ){
+  void update(){    background(100);
+ 
+   setRepForce();
+      setSpringForce();
+   for( Node n : nodes ){
       //println("repF" + n.repForce);
       //println("repS" + n.springForce);
       if (input.equals(n.protein)) {

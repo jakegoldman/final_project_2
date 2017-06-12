@@ -57,7 +57,7 @@ void switchCluster(){
 
 
 void draw() {
-  background(100);
+  //background(100);
   pushMatrix();
   scale(zoomFactor);
   translate(tX, tY);

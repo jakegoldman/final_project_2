@@ -39,35 +39,35 @@ class Node implements Comparable<Node> {
   }
   
   void update() {
-    if( !pause ){
-      //if (repForce.x + repForce.y < 0.0001 && 
-        //  springForce.x + springForce.y < 0.0001) {
-       // return;
-      //}
+    //if (repForce.x + repForce.y < 0.0001 && 
+      //  springForce.x + springForce.y < 0.0001) {
+      // return;
+    //}
+    if(!pause){
       pos = pos.add(repForce);
       pos = pos.add(springForce);
-      if(pos.x < 0) {
-        pos.x = 0;
-      }
-      if(pos.x > width) {
-        pos.x = width;
-      }
-      if(pos.y < 0) {
-        pos.y = 0;
-      }
-      if(pos.y > height) {
-        pos.y = height;
-      }
-      //if(toHighlight) {
-        float dx = (mouseX - tX) - (pos.x);
-        float dy = (mouseY - tY) - (pos.y);
-        inside = color (128, 0, 128);
-        if (abs(dx) < size/2.0 &&
-            abs(dy) < size/2.0) {
-              highlight();
-            }
-      //}
     }
+    if(pos.x < 0) {
+      pos.x = 0;
+    }
+    if(pos.x > width) {
+      pos.x = width;
+    }
+    if(pos.y < 0) {
+      pos.y = 0;
+    }
+    if(pos.y > height) {
+      pos.y = height;
+    }
+    //if(toHighlight) {
+      float dx = (mouseX - tX) - (pos.x);
+      float dy = (mouseY - tY) - (pos.y);
+      inside = color (128, 0, 128);
+      if (abs(dx) < size/2.0 &&
+          abs(dy) < size/2.0) {
+            highlight();
+          }
+    //}
   }
  
   
@@ -113,6 +113,7 @@ class Node implements Comparable<Node> {
   void highlight() {
      inside = color(50, 255, 50);
      fill(0);
+     textSize(10);
      text(protein,pos.x + size + 2, pos.y + size + 2);
   }
   
