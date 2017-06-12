@@ -8,6 +8,10 @@ Algorithm credits go to Michael J. McGuffin; retrieved from http://profs.etsmtl.
 
 Libraries used: controlp5
 
+Important Notes:
+- Only critical components are in our URL diagram (no helpers or visual elements)
+- Because our project uses large datasets, our lines edited aren't indicative of anything
+
 
 **Brief Description**:
 
