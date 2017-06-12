@@ -5,6 +5,7 @@ class Network{
   
   ArrayList<Node> nodes = new ArrayList<Node>();
   ArrayList<Edge> edges = new ArrayList<Edge>();
+  BinarySearchTree bst;
   //float Kr = Rep_Force;
   //float Ks = Spring_Force;
   float restLength = 50;
@@ -14,7 +15,7 @@ class Network{
     Table table = loadTable( "clusterNew.csv", "header" );
     
     // iterate through each row
-    BinarySearchTree bst = new BinarySearchTree();
+    bst = new BinarySearchTree();
     for( TableRow row : table.rows() ){
       int cluster = row.getInt("cluster");
       if(cluster == targetCluster){   // if this interaction is within the cluster
