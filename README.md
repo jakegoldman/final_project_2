@@ -62,7 +62,9 @@ constant. This creates a model in which, over time, the nodes gradually move tow
 
 -We have not yet found a combination of constants that causes the system to reach equilibrium. Feel free to experiment with the sliders in an attempt to fix this bug (please let us know if you do...)
 
--after the sliders are used, the initial position cannot be restored
+-After the sliders are used, the initial position cannot be restored
+
+-Nodes can behave unpredictably when they colide
 
 
 
