@@ -6,7 +6,6 @@ class Node implements Comparable<Node> {
   float Kr; // constant for the repForce
   PVector springForce; // spring force to act on it
   color inside;
-  Node[] neighbors; //nodes it is connected to
   boolean highlighted; //if selected
   int size;
   
