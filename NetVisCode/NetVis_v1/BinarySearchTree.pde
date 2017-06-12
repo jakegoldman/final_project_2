@@ -1,18 +1,18 @@
 class BinarySearchTree {
 
-  class Nodule {
+  class Value {
   
     Node data;
-    Nodule left;
-    Nodule right;
+    Value left;
+    Value right;
   
-    Nodule(Node data){
+    Value(Node data){
       this.data = data;
     }
   }
   
   
-  Nodule root;
+  Value root;
 
 
   BinarySearchTree() {
@@ -21,14 +21,14 @@ class BinarySearchTree {
   
 
   public void add(Node prot){
-    Nodule toAdd = new Nodule( prot );
+    Value toAdd = new Value( prot );
     if( root==null ){
       root = toAdd;
       return;
     }
     
-    Nodule current = root;
-    Nodule parent = null;
+    Value current = root;
+    Value parent = null;
     
     while(true){
       parent = current;
@@ -51,7 +51,7 @@ class BinarySearchTree {
   
 
   public Node find(Node prot){
-    Nodule current = root;
+    Value current = root;
     while( current!=null ) {
       if( current.data.protein.equals(prot.protein) ) {
         return current.data;
