@@ -29,7 +29,7 @@ constant. This creates a model in which, over time, the nodes gradually move tow
 
 **Features/Bugs** (as of 6/11/17):
 
-Features:
+*Features*:
 
 -Working Visualization
 
@@ -48,7 +48,7 @@ Features:
 -Pause all movement using the spacebar (other features still work)
 
 
-Bugs:
+*Bugs*:
 
 -Sometimes nodes are pushed too far against edge of screen
 
@@ -57,6 +57,8 @@ Bugs:
 -The protein name is displayed underneath edge making it hard to read
 
 -We have not yet found a combination of constants that causes the system to reach equilibrium. Feel free to experiment with the sliders in an attempt to fix this bug (please let us know if you do...)
+
+-after the sliders are used, the initial position cannot be restored
 
 
 
@@ -75,12 +77,11 @@ Bugs:
 3. Scroll/mousewheel to zoom in and out
 4. The first slider on the top left adjusts the repel force (will push nodes farther apart).
 5. The second slider adjusts the spring force (will pull nodes closer together).
-6. Use the first textbox to search for a specific protein.
+6. Use the first textbox to search for a specific protein within the cluster.
 7. If you want to reset the zoom and forces press the 'r' key.
 8. If you want to pause all movement, press spacebar
 9. If you want to quit the program, press 'q'.
 10. If you want to examine a different cluster, use the textbox and pick a different number. Cluster 1 is the largest one (76 proteins) and cluster 1320 is the smallest (3 proteins).
-11. If you want to view a different cluster, use the second textbox
 
 
 
