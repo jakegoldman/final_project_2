@@ -79,7 +79,7 @@ Bugs:
 7. If you want to reset the zoom and forces press the 'r' key.
 8. If you want to pause all movement, press spacebar
 9. If you want to quit the program, press 'q'.
-10. If you want to examine a different cluster, go into the code and change the variable clusternum in the setup function (line 22).
+10. If you want to examine a different cluster, use the textbox and pick a different number. Cluster 1 is the largest one (76 proteins) and cluster 1320 is the smallest (3 proteins).
 11. If you want to view a different cluster, use the second textbox
 
 
