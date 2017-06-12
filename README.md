@@ -11,8 +11,18 @@ Libraries used: controlp5
 
 **Brief Description**:
 
-	Our project is a protein network visualization. The journal Nature published an article on May 17 titled Architecture of the human interactome defines protein communities and disease networks. (http://www.nature.com/nature/journal/v545/n7655/full/nature22366.html) The paper examines protein interaction and includes a dataset of around 56,000 protein interactions with each other. The paper also includes a file detailing 1320 clusters of these proteins, which are groupings based on their. Since the entire 56,000 interaction dataset would be too big to visualize, our project will allow the user to visualize any of the individual clusters.
-	The first aspect of our project is a java program that takes in the two complex datasets (named ProteinInteractionList.csv and cluster.csv) and converts them into one, easily readable dataset to be used with the main program. The next part is a Processing program that reads the new dataset and represents it visually using a Force-Node algorithm, in which each protein is represented as a node and each interaction as an edge. The point of this model is to visualize the data in an easy-to-read way. Each node starts at a random position, and then adjusts its position according to several forces. The edges are modeled as springs, with a spring constant and rest length, and apply an attractive force onto their nodes. However, every node exerts a repelling force on each other node, also based on a constant. This creates a model in which, over time, the nodes gradually move towards an ideal position until they reach equilibrium.
+    Our project is a protein network visualization. The journal Nature published an article on May 17 titled *Architecture of the human
+interactome defines protein communities and disease networks*. (http://www.nature.com/nature/journal/v545/n7655/full/nature22366.html) The
+paper examines protein interaction and includes a dataset of around 56,000 protein interactions with each other. The paper also includes a
+file detailing 1320 clusters of these proteins, which are groupings based on their. Since the entire 56,000 interaction dataset would be
+too big to visualize, our project will allow the user to visualize any of the individual clusters.
+	The first aspect of our project is a java program that takes in the two complex datasets (named ProteinInteractionList.csv and
+cluster.csv) and converts them into one, easily readable dataset to be used with the main program. The next part is a Processing program
+that reads the new dataset and represents it visually using a Force-Node algorithm, in which each protein is represented as a node and 
+each interaction as an edge. The point of this model is to visualize the data in an easy-to-read way. Each node starts at a random 
+position, and then adjusts its position according to several forces. The edges are modeled as springs, with a spring constant and rest 
+length, and apply an attractive force onto their nodes. However, every node exerts a repelling force on each other node, also based on a 
+constant. This creates a model in which, over time, the nodes gradually move towards an ideal position until they reach equilibrium.
 
 
 
