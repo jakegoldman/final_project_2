@@ -10,7 +10,7 @@ String input; //textbox input
 float Rep_Force;
 float Spring_Force;
 int clusternum = 70; //change this number from 1 - 1320 to visualize different cluster (1 is largest cluster, 1320 is smallest);
-boolean wrongCluster = false;
+boolean pause = false;
 
 void setup() {
   size(1200, 700);
@@ -64,8 +64,14 @@ void draw() {
   network.update();
   popMatrix(); 
   fill(0);
+  textSize(10);
   text("The current cluster is: " + clusternum, 20, 280);
   text("Please input a number from 1-1320 to change clusters", 20, 290); // error message for putting in an invalid cluster
+  if( pause ){
+    textSize(50);
+    fill(255,0,0);
+    text("PAUSED", 1000, 50);
+  }
 }
 
 void keyPressed() {
@@ -79,6 +85,9 @@ void keyPressed() {
     Rep_Force = 1;
     Spring_Force = 0.0000001; 
   }
+  if (key == ' ') { //pauses the program
+    pause = !pause;
+  }   
 }
 
 
