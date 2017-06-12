@@ -7,16 +7,16 @@ boolean toHighlight;
 PFont font;
 ControlP5 cp5;
 String input; //textbox input
-float sliderR;
-float sliderS;
+float Rep_Force;
+float Spring_Force;
 int clusternum;
 
 void setup() {
   size(1200, 700);
   font = createFont("arial", 20);
   cp5 = new ControlP5(this);//"this" lets u run whatever method u put after cp5
-  sliderR = 1;
-  sliderS = 0.0000001;
+  Rep_Force = 1;
+  Spring_Force = 0.0000001;
   input = "placeholder";
   makeWidgets();
   clusternum = 70; //change this number from 1 - 1320 to visualize different cluster (1 is largest cluster, 1320 is smallest)
@@ -28,8 +28,8 @@ void setup() {
 }
 
 void makeWidgets() {
-  cp5.addSlider("sliderR").setPosition(20, 20).setRange(0.01, 100);
-  cp5.addSlider("sliderS").setPosition(20, 50).setRange(0.0000001, 0.0001);
+  cp5.addSlider("Rep_Force").setPosition(20, 20).setRange(0.01, 100);
+  cp5.addSlider("Spring_Force").setPosition(20, 50).setRange(0.0000001, 0.0001);
   cp5.addTextfield("protein").setPosition(20, 80).setSize(200,40).setAutoClear(false);
   cp5.addBang("search").setPosition(20, 140).setSize(40,10);
 }
@@ -59,8 +59,8 @@ void keyPressed() {
     zoomFactor = 1;
     tX = 0;
     tY = 0;
-    sliderR = 1;
-    sliderS = 0.0000001; 
+    Rep_Force = 1;
+    Spring_Force = 0.0000001; 
   }
 }
 

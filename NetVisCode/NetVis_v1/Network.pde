@@ -5,8 +5,8 @@ class Network{
   
   ArrayList<Node> nodes = new ArrayList<Node>();
   ArrayList<Edge> edges = new ArrayList<Edge>();
-  //float Kr = sliderR;
-  //float Ks = sliderS;
+  //float Kr = Rep_Force;
+  //float Ks = Spring_Force;
   float restLength = 50;
  
   
@@ -22,9 +22,9 @@ class Network{
         String p1 = row.getString("SymbolA");
         String p2 = row.getString("SymbolB");
         Random random = new Random();
-        Node n1 = new Node( p1, 350 + random.nextInt(501), 100 + random.nextInt(501), sliderR );
+        Node n1 = new Node( p1, 350 + random.nextInt(501), 100 + random.nextInt(501), Rep_Force );
         //println(350 + random.nextInt(501));
-        Node n2 = new Node( p2, 350 + random.nextInt(501), 100 + random.nextInt(501), sliderR );
+        Node n2 = new Node( p2, 350 + random.nextInt(501), 100 + random.nextInt(501), Rep_Force );
         
         Node bstRes1 = bst.find(n1); // the result of trying to find the node in the list of current nodes
         Node bstRes2 = bst.find(n2);
@@ -34,17 +34,17 @@ class Network{
           bst.add(n2);
           nodes.add(n1);
           nodes.add(n2);
-          edges.add( new Edge( n1, n2, sliderS, restLength ) );
+          edges.add( new Edge( n1, n2, Spring_Force, restLength ) );
         } else if (bstRes1 == null){
           bst.add(n1);
           nodes.add(n1);
-          edges.add( new Edge( n1, bstRes2, sliderS, restLength ) );
+          edges.add( new Edge( n1, bstRes2, Spring_Force, restLength ) );
         } else if (bstRes2 == null){
           bst.add(n2);
           nodes.add(n2);
-          edges.add( new Edge( bstRes1, n2, sliderS, restLength ) );
+          edges.add( new Edge( bstRes1, n2, Spring_Force, restLength ) );
         } else {
-          edges.add( new Edge( bstRes1, bstRes2, sliderS, restLength) );
+          edges.add( new Edge( bstRes1, bstRes2, Spring_Force, restLength) );
         }
         
       }
